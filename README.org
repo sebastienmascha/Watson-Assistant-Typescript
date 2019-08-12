@@ -1,0 +1,71 @@
+* Watson Assistant Typescript
+
+  Demo of Watson Assistant using Node.js and Typescript for the IBM
+  France Client Center
+
+** Video
+
+   This code was made to create a [[file:video.mp4][video]] aimed at developers in IBM
+   France's Client Center. In this video we go through the creation of
+   a Node.js/Typescript server that uses Watson's Node.js SDK.
+
+** Prerequisites
+
+   In order to use this connector, you need to be able to use IBM
+   Watson Assistant. Therefore you need an IBM Cloud account, here are
+   the steps to get you started :
+
+   - Sign up for an [[https://cloud.ibm.com/registration/][IBM Cloud account]].
+   - Create an instance of the [[https://cloud.ibm.com/catalog/services/conversation][Watson Assistant]] service and get your
+     credentials.
+
+** Configuring Watson Assistant
+
+   1. In your IBM Cloud console, open the Watson Assistant service
+      instance
+   2. Click *Create a Skill* and *Create New*.
+   3. Choose the *Import skill* tab and *Choose a JSON File* and
+      select the previously downloaded file.
+   4. Then deploy your skill in an Assistant in the *Assistants*
+      tab :
+      - Click on *Create New*
+      - Give it a proper name and click on *Create*
+      - Then add your Dialog Skill that you previously created
+      - Go to *View API Details* and save your credentials, you will
+        need them later.
+
+** Configuring the Server
+
+   - Create the =.env= file:
+
+   #+BEGIN_SRC bash
+     mv .env.example .env
+   #+END_SRC
+
+   - Fill it with your own credentials from Watson Assistant
+
+** Run Tests
+
+   #+BEGIN_SRC bash
+     npm run test
+   #+END_SRC
+
+** Run the server in development
+
+   #+BEGIN_SRC bash
+     npm run dev
+   #+END_SRC
+
+** Run the server in production
+
+   Build into Javascript :
+
+   #+BEGIN_SRC bash
+     npm run build
+   #+END_SRC
+
+   Run the compiled server :
+
+   #+BEGIN_SRC bash
+     npm start
+   #+END_SRC
